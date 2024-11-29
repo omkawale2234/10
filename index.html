@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            margin-bottom: 40px;
+        }
+        button {
+            margin: 5px;
+        }
+        #video {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">This is the Heading</h1>
+        <button onclick="changeHeading('Welcome to My Page')">Change Heading</button>
+        <button onclick="changeHeading('Hello World')">Change Heading to Hello World</button>
+        <button onclick="changeHeading('JavaScript is Awesome')">Change Heading to JS</button>
+        <button onclick="changeHeading('Interactive Page')">Change Heading to Interactive</button>
+    </div>
+
+    <div class="container">
+        <img id="image" src="https://via.placeholder.com/300" alt="Placeholder Image" />
+        <br>
+        <button onclick="changeImage('https://via.placeholder.com/300')">Reset Image</button>
+        <button onclick="changeImage('https://via.placeholder.com/300/ff0000')">Change Image to Red</button>
+        <button onclick="changeImage('https://via.placeholder.com/300/00ff00')">Change Image to Green</button>
+        <button onclick="changeImage('https://via.placeholder.com/300/0000ff')">Change Image to Blue</button>
+    </div>
+
+    <div class="container">
+        <video id="video" controls>
+            <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <br>
+        <button onclick="resizeVideo(400, 300)">Reset Video Size</button>
+        <button onclick="resizeVideo(640, 480)">Change Video to 640x480</button>
+        <button onclick="resizeVideo(800, 600)">Change Video to 800x600</button>
+        <button onclick="resizeVideo(1024, 768)">Change Video to 1024x768</button>
+    </div>
+
+    <div class="container">
+        <p id="paragraph">This is a paragraph of text. You can hide it by clicking the button below.</p>
+        <button onclick="hideParagraph()">Hide Paragraph</button>
+        <button onclick="showParagraph()">Show Paragraph</button>
+        <button onclick="changeParagraph('This is the new paragraph text')">Change Paragraph</button>
+        <button onclick="changeParagraph('Another text update!')">Another Text Update</button>
+    </div>
+
+    <script>
+        
+        function changeHeading(newText) {
+            document.getElementById('heading').innerText = newText;
+        }
+
+       
+        function changeImage(newSrc) {
+            document.getElementById('image').src = newSrc;
+        }
+
+       
+        function resizeVideo(width, height) {
+            var video = document.getElementById('video');
+            video.width = width;
+            video.height = height;
+        }
+
+        
+        function hideParagraph() {
+            document.getElementById('paragraph').style.display = 'none';
+        }
+
+      
+        function showParagraph() {
+            document.getElementById('paragraph').style.display = 'block';
+        }
+
+       
+        function changeParagraph(newText) {
+            document.getElementById('paragraph').innerText = newText;
+        }
+    </script>
+</body>
+</html>
